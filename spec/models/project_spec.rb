@@ -6,13 +6,13 @@ RSpec.describe Project do
     let(:task) { Task.new }
 
     it "considers a project with no tasks to be done" do
-      expect(project.done?).to be_truthy
+      expect(project).to be_done
     end
 
     it "knows that a project with an incomplete task is not done" do
       task = Task.new
       project.tasks << task
-      expect(project.done?).to be_falsy
+      expect(project).not_to be_done
     end
   end
 end
